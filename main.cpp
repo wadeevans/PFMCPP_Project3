@@ -36,51 +36,51 @@ Sub Object 1: Steering Wheel
     Name 4 things you'll find on the:    Steering Wheel
         1) paddle shifters
         2) 'cruise control' controls
-        3) 
-        4) 
+        3) indicator controls
+        4) horn
     Name 2 things you can do with the:   Steering Wheel
         1) adjust cruise control settings.
-        2)
+        2) turn the wheels
         
 Sub Object 2: Instrument Cluster
     Name 4 things you'll find on the:   Instrument Cluster
-        1)
-        2)
-        3)
-        4)
+        1) speedometer
+        2) rev counter
+        3) fuel gauge
+        4) fuel consumption gauge
     Name 3 things you can do with the:   Instrument Cluster
-        1)
-        2)
-        3)
+        1) check speed
+        2) check engine revs
+        3) check fuel level
     
 Sub Object 3: Environment Controls
     Name 3 things you'll find on the:    Environment Controls
-        1)
-        2)
-        3)
+        1) heater control
+        2) air conditioner control
+        3) fan control
     Name 3 things you can do with the:   Environment Controls
-        1)
-        2)
-        3)
+        1) adjust heat
+        2) adjust aircon
+        3) adjust fan
 
 Sub Object 4: Infotainment System
     Name 3 things you'll find on the:    Infotainment System
-        1)
-        2)
-        3)
+        1) radio channel controls
+        2) sat nav controls
+        3) system volume controls
     Name 3 things you can do with the:   Infotainment System
-        1)
-        2)
-        3)
+        1) change radio station
+        2) set sat nav
+        3) change system volume levels
 
 Sub Object 5: Seat 
     Name 3 things you'll find on the:    Seat
-        1)
-        2)
-        3)
+        1) height adjustment controls
+        2) tilt adjustment controls
+        3) position controls
     Name 2 things you can do with the:   Seat
-        1)
-        2)
+        1) adjust seat height
+        2) adjust seat position
 */
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
