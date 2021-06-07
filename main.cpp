@@ -60,7 +60,7 @@ Thing 1) Hairdressing Salon
     2) Number of Colourists
     3) Number of Units of Shampoo
     4) Number of Units of Hair Colour
-    5)
+    5) Number of Customers
 3 things it can do:
     1) Cut Hair
     2) Colour Hair
@@ -68,45 +68,45 @@ Thing 1) Hairdressing Salon
  */
 
 /*
-Thing 2) 
+Thing 2) Audio Compressor Limiter Effect
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Threshold for Compressor
+    2) Make Up Gain for Compressor
+    3) Threshold for Limiter
+    4) Amount of Gain Change
+    5) Compression ratio
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Compress Audio
+    2) Limit Audio 
+    3) Change Audio Gain
  */
 
 /*
-Thing 3)
+Thing 3) Gym
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Annual Fee
+    2) Number of Customers
+    3) Number of Running Machines
+    4) Staff Wages
+    5) Annual Income
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Pay Staff
+    2) Service Machines
+    3) Invoice Customers
  */
 
 /*
-Thing 4)
+Thing 4) Fridge Freezer
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Temperature of Fridge
+    2) Temperature of Freezer
+    3) Available Space in Fridge
+    4) Available Space in Freezer
+    5) 
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Change Fridge Temperature
+    2) Change Freezer Temperature
+    3) Check Temperatures
  */
 
 
