@@ -54,21 +54,21 @@ Thing: Car Wash
  */
 
 /*
-Thing 1)
+Thing 1) Hairdressing Salon
 5 properties:
-    1)
-    2)
-    3)
-    4)
+    1) Number of Hairdressers
+    2) Number of Colourists
+    3) Number of Units of Shampoo
+    4) Number of Units of Hair Colour
     5)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Cut Hair
+    2) Colour Hair
+    3) Wash Hair
  */
 
 /*
-Thing 2)
+Thing 2) 
 5 properties:
     1)
     2)
