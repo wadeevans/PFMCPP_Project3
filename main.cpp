@@ -96,17 +96,17 @@ Thing 3) Gym
  */
 
 /*
-Thing 4) Fridge Freezer
+Thing 4) Bicycle
 5 properties:
-    1) Temperature of Fridge
-    2) Temperature of Freezer
-    3) Available Space in Fridge
-    4) Available Space in Freezer
-    5) 
+    1) Rear Tyre Pressure
+    2) Front Tyre Pressure
+    3) Height of Saddle
+    4) Height of Handlebars
+    5) Wheel diameter
 3 things it can do:
-    1) Change Fridge Temperature
-    2) Change Freezer Temperature
-    3) Check Temperatures
+    1) Adjust Tyre Pressure
+    2) Adjust Saddle Height
+    3) Turn Front Wheel
  */
 
 
