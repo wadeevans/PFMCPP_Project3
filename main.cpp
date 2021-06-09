@@ -110,17 +110,17 @@ Thing 4) Bicycle
  */
 
 /*
-Thing 10)
+Thing 10) Kitchen
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Lights
+    2) Cooker
+    3) Fridge
+    4) Sink
+    5) Toaster
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Wash Dishes
+    2) Cook Food
+    3) Cool Food
  */
 
 /*
