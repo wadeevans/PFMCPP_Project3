@@ -128,73 +128,73 @@ Thing 4) Bicycle
  */
 
 /*
-Thing 5)
+Thing 5) Lights
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Counter Lights Dimmer Setting
+    2) Main Lights Dimmer Setting
+    3) Total Wattage
+    4) Number of Bulbs
+    5) Wattage of Bulb
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Light Counter 
+    2) Adjust Counter Dimmer Setting
+    3) Adjust Main Dimmer Setting
  */
 
 /*
-Thing 6)
+Thing 6) Cooker
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Oven Temperature
+    2) Cooking Time
+    3) Oven Shelf Height Setting
+    4) Cooker Height
+    5) Cooker Width
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Set Oven Temperature
+    2) Set Cooking Time
+    3) Adjust Shelf Height
  */
 
 /*
-Thing 7)
+Thing 7) Fridge
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Fridge Temperature
+    2) Freezer Temperature
+    3) Fridge Capacity
+    4) Fridge Height
+    5) Fridge Width
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Set Fridge Temperature
+    2) Set Freezer Temperature
+    3) Defrost
  */
 
 /*
-Thing 8)
+Thing 8) Sink
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Cold Water Flow
+    2) Hot Water Flow
+    3) Water Temperature
+    4) Capacity
+    5) Water Outflow Rate
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Adjust Water Temperature
+    2) Set Cold Water Flow
+    3) Set Hot Water Flow
  */
 
 /*
-Thing 9)
+Thing 9) Toaster
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Timer Setting
+    2) Width 
+    3) Height 
+    4) Depth 
+    5) Max Width of Toastable Objects
 3 things it can do:
-    1)
-    2)
-    3)
+    1) Set Timer
+    2) Raise Toast
+    3) Lower Toast
  */
 
 
