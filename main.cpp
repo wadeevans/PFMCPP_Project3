@@ -131,6 +131,38 @@ Thing 1) Hairdressing Salon
     2) Colour Hair
     3) Wash Hair
  */
+ struct HairdressingSalon
+ {
+    // Number of Hairdressers
+    int numHairdressers = 4;
+    // Number of Colourists
+    int numColourists = 2;
+    // Number of Units of Shampoo
+    int numUnitsShampoo = 84;
+    // Number of Units of Hair Colour
+    int numUnitsHairColour = 35;
+    // Number of Customers
+    int numCustomers = 5;
+
+    struct Hairdresser
+    {
+        int yearsExperience = 5;
+        int age = 27;
+        bool qualifiedToColourHair = true;
+        float haircutRate = 65.0f;
+        std::string name = "Tracey";
+
+        int getNumberOfPersonalClients();
+        void cutCustomerHair();
+        void takeBreak();
+    };
+
+    // Cut Hair
+     void cutHair(Hairdresser hairdresser);
+     void colourHair(Hairdresser hairdresser);
+     void washHair(Hairdresser hairdresser);
+
+ };
 
 /*
 Thing 2) Audio Compressor Limiter Effect
