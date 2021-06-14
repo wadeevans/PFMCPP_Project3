@@ -194,7 +194,7 @@ struct AudioCompLimiterEffect
     float compRatio = 3.f;
 
     // Compress Audio
-    void compressAudio();
+    void compressAudio(float compRatio, float compThreshold);
     // Limit Audio
     void limitAudio();
     // Change Audio Gain
@@ -266,8 +266,21 @@ struct Bicycle
     // Wheel diameter
     int wheelDiameter = 28;
 
+    struct Pannier
+    {
+        bool isFrontPannier = true;
+        bool isRearPannier = false;
+        float pannierHeight = 25;
+        float pannierWidth = 30;
+        float pannierLength = 45;
+
+        void openPannier();
+        void closePannier();
+        void removePannier();
+    };
+
     // Adjust Tyre Pressure
-    void adjustTyrePressure(float correctTyrePressure);
+    void adjustTyrePressure(float rearTyrePressure, float frontTyrePressure);
     // Adjust Saddle Height
     bool adjustSaddleHeight(float newSaddleHeight);
     // Turn Front Wheel
