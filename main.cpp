@@ -158,9 +158,9 @@ Thing 1) Hairdressing Salon
     };
 
     // Cut Hair
-     void cutHair(Hairdresser hairdresser);
-     void colourHair(Hairdresser hairdresser);
-     void washHair(Hairdresser hairdresser);
+    void cutHair(Hairdresser hairdresser);
+    void colourHair(Hairdresser hairdresser);
+    void washHair(Hairdresser hairdresser);
 
  };
 
@@ -177,6 +177,15 @@ Thing 2) Audio Compressor Limiter Effect
     2) Limit Audio 
     3) Change Audio Gain
  */
+
+struct AudioCompLimiterEffect
+{
+    // Threshold for Compressor
+    float compThreshold = -6.f;
+    // Make Up Gain for Compressor
+    float compMakeupGain = +3.f;
+
+};
 
 /*
 Thing 3) Gym
