@@ -159,7 +159,9 @@ Thing 1) Hairdressing Salon
 
     // Cut Hair
     void cutHair(Hairdresser hairdresser);
+    // Colour Hair
     void colourHair(Hairdresser hairdresser);
+    // Wash Hair
     void washHair(Hairdresser hairdresser);
 
  };
@@ -184,6 +186,20 @@ struct AudioCompLimiterEffect
     float compThreshold = -6.f;
     // Make Up Gain for Compressor
     float compMakeupGain = +3.f;
+    // Threshold for Limiter
+    float limiterThreshold = -3.f;
+    // Amount of gain change
+    float gainChange = 0.f;
+    // Compression ratio
+    float compRatio = 3.f;
+
+    // Compress Audio
+    void compressAudio();
+    // Limit Audio
+    void limitAudio();
+    // Change Audio Gain
+    void changeGain(float gainChange);
+
 
 };
 
@@ -201,6 +217,28 @@ Thing 3) Gym
     3) Invoice Customers
  */
 
+struct Gym 
+{
+    // Annual Fee
+    float annualFee = 350.f;
+    // Number of Customers
+    int numberOfCustomers = 100;
+    // Number of Running Machines
+    int numberOfRunningMachines = 25;
+    // Staff Wages
+    float staffWages = 25000.f;
+    // Annual Income
+    float annualIncome = 35000.f;
+
+    // Pay Staff
+    void payStaff(std::string staffName);
+    // Service Machines
+    void serviceMachines(int machineId);
+    // Invoice Customers
+    void invoiceCustomer(std::string customerName);
+
+};
+
 /*
 Thing 4) Bicycle
 5 properties:
@@ -214,6 +252,16 @@ Thing 4) Bicycle
     2) Adjust Saddle Height
     3) Turn Front Wheel
  */
+
+struct Bicycle
+{
+    // Rear Tyre Pressure
+    // Front Tyre Pressure
+    // Height of Saddle
+    // Height of Handlebars
+    // Wheel diameter
+    int wheelDiameter = 28;
+};
 
 /*
 Thing 5) Lights
