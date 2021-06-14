@@ -256,11 +256,22 @@ Thing 4) Bicycle
 struct Bicycle
 {
     // Rear Tyre Pressure
+    int rearTyrePressure = 45;
     // Front Tyre Pressure
+    int frontTyrePressure = 45;
     // Height of Saddle
+    float heightOfSaddle = 8.75f;
     // Height of Handlebars
+    float heightOfHandlebars = 7.5f;
     // Wheel diameter
     int wheelDiameter = 28;
+
+    // Adjust Tyre Pressure
+    void adjustTyrePressure(float correctTyrePressure);
+    // Adjust Saddle Height
+    bool adjustSaddleHeight(float newSaddleHeight);
+    // Turn Front Wheel
+    void turnFrontWheel(float amount);
 };
 
 /*
@@ -277,6 +288,27 @@ Thing 5) Lights
     3) Adjust Main Dimmer Setting
  */
 
+struct Lights
+{
+    // Counter Lights Dimmer Setting
+    int counterLightDimmerSetting = 75;
+    // Main Lights Dimmer Setting
+    int mainLightDimmerSetting = 100;
+    // Total Wattage
+    int TotalWattage = 300;
+    // Number of Bulbs
+    int numberOfBulbs = 5;
+    // Wattage of Bulb
+    int wattageOfBulb = 60;
+
+    // Light Counter 
+    void lightCounter();
+    // Adjust Counter Dimmer Setting
+    void adjustCounterDimmerSetting(float newCounterDimmerSetting);
+    // Adjust Main Dimmer Setting
+    void adjustMainDimmerSetting(float newMainDimmerSetting);
+};
+
 /*
 Thing 6) Cooker
 5 properties:
@@ -290,6 +322,27 @@ Thing 6) Cooker
     2) Set Cooking Time
     3) Adjust Shelf Height
  */
+
+struct Cooker
+{
+    // Oven Temperature
+    int ovenTemperature = 200;
+    // Cooking Time
+    int cookingTime = 120;
+    // Oven Shelf Height Setting
+    int ovenShelfHeight = 3;
+    // Cooker Height
+    float cookerHeight = 90.f;
+    // Cooker Width
+    float cookerWidth = 60.f;
+
+    // Set Oven Temperature
+    void setOvenTemperature(int temperature);
+    // Set Cooking Time
+    void setCookingTime(int time);
+    // Adjust Shelf Height
+    void adjustShelfHeight(int height);
+};
 
 /*
 Thing 7) Fridge
@@ -305,6 +358,27 @@ Thing 7) Fridge
     3) Defrost
  */
 
+struct Fridge 
+{
+    // Fridge Temperature
+    int fridgeTemperature = 5;
+    // Freezer Temperature
+    int freezerTemperature = -18;
+    // Fridge Capacity
+    float fridgeCapacity = 450;
+    // Fridge Height
+    float fridgeHeight = 120;
+    // Fridge Width
+    float fridgeWidth = 60;
+
+    // Set Fridge Temperature
+    void setFridgeTemperature(int temperature);
+    // Set Freezer Temperature
+    void setFreezerTemperature(int temperature);
+    // Defrost
+    void defrost(int time);
+};
+
 /*
 Thing 8) Sink
 5 properties:
@@ -319,6 +393,27 @@ Thing 8) Sink
     3) Set Hot Water Flow
  */
 
+struct Sink
+{
+    // Cold Water Flow
+    int coldWaterFlow = 8;
+    // Hot Water Flow
+    int hotWaterFlow = 6;
+    // Water Temperature
+    int waterTemperature = 40;
+    // Capacity
+    int capacity = 24;
+    // Water Outflow Rate
+    int waterOutflowRate = 13;
+
+    // Adjust Water Temperature
+    void adjustWaterTemperature(int temperature);
+    // Set Cold Water Flow
+    void setColdWaterFlow(int newFlow);
+    // Set Hot Water Flow
+    void setHotWaterFlow(int newFlow);
+};
+
 /*
 Thing 9) Toaster
 5 properties:
@@ -332,6 +427,27 @@ Thing 9) Toaster
     2) Raise Toast
     3) Lower Toast
  */
+
+struct Toaster
+{
+    // Timer Setting
+    int timerSetting = 30;
+    // Width
+    float width = 30.f; 
+    // Height 
+    float height = 20.f;
+    // Depth 
+    float depth = 22.f;
+    // Max Width of Toastable Objects
+    float maxWidth = 2.5;
+
+    // Set Timer
+    void setTimer(int time);
+    // Raise Toast
+    void raiseToast();
+    // Lower Toast
+    void lowerToast();
+};
 
 
 
@@ -349,6 +465,22 @@ Thing 10) Kitchen
     2) Cook Food
     3) Cool Food
  */
+
+struct Kitchen
+{
+    Lights lights;
+    Cooker cooker;
+    Fridge fridge;
+    Sink sink;
+    Toaster toaster;
+
+    // Wash Dishes
+    void washDishes(Sink sink);
+    // Cook Food
+    void cookFood(Cooker cooker);
+    // Cool Food
+    void coolFood(Fridge fridge);
+};
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
