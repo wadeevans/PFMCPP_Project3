@@ -110,10 +110,57 @@ struct CarWash
 
 struct Person 
 {
-    
+    int age;
+    int height;
+    float hairLength;
+    float GPA; // I have no idea what this is!!
+    unsigned int SATScore;
+    int distanceTravelled;
+
+    struct Limb
+    {
+        int sizeOfStep;
+
+
+        void stepForward();
+        int stepSize();
+
+    };
+
+    Limb leftFoot;
+    Limb rightFoot;
+
+    void Run(int howFast, bool startWithLeftFoot);
 };
 
+void Person::Limb::stepForward()
+{
 
+}
+
+int Person::Limb::stepSize()
+{
+    return sizeOfStep;
+}
+
+void Person::Run(int howFast, bool startWithLeftFoot)
+{
+    if (startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+        distanceTravelled += leftFoot.stepSize() + rightFoot.stepSize();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    int overallStepSize = leftFoot.stepSize() + rightFoot.stepSize();
+
+    distanceTravelled *= howFast * overallStepSize;
+
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
