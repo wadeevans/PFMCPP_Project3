@@ -189,8 +189,8 @@ Thing 1) Hairdressing Salon
     2) Colour Hair
     3) Wash Hair
  */
- struct HairdressingSalon
- {
+struct HairdressingSalon
+{
     int numHairdressers = 4;
     int numColourists = 2;
     int numUnitsShampoo = 84;
@@ -214,18 +214,17 @@ Thing 1) Hairdressing Salon
     void cutHair(Hairdresser hairdresser);
     void colourHair(Hairdresser hairdresser);
     void washHair(Hairdresser hairdresser);
+};
 
- };
+int HairdressingSalon::Hairdresser::getNumberOfPersonalClients()
+{
+    return numberOfPersonalClients;
+}
 
- int HairdressingSalon::Hairdresser::getNumberOfPersonalClients()
- {
-     return numberOfPersonalClients;
- }
+void HairdressingSalon::Hairdresser::cutCustomerHair()
+{
 
- void HairdressingSalon::Hairdresser::cutCustomerHair()
- {
-
- }
+}
         
 void HairdressingSalon::Hairdresser::takeBreak()
 {
@@ -273,12 +272,30 @@ struct AudioCompLimiterEffect
     float gainChange = 0.f;
     float compRatio = 3.f;
 
-    void compressAudio(float compRatio, float compThreshold);
+    void compressAudio(float compressionRatio, float compressionThreshold);
     void limitAudio();
-    void changeGain(float gainChange);
+    void changeGain(float newGain);
 
 
 };
+
+void AudioCompLimiterEffect::compressAudio(float compressionRatio, float compressionThreshold)
+{
+    this->compRatio = compressionRatio;
+    this->compThreshold = compressionThreshold;
+}
+
+void AudioCompLimiterEffect::limitAudio()
+{
+
+}
+
+void AudioCompLimiterEffect::changeGain(float newGain)
+{
+    this->gainChange = newGain;
+}
+
+
 
 /*
 Thing 3) Gym
