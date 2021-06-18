@@ -204,6 +204,7 @@ Thing 1) Hairdressing Salon
         bool qualifiedToColourHair = true;
         float haircutRate = 65.0f;
         std::string name = "Tracey";
+        int numberOfPersonalClients = 1;
 
         int getNumberOfPersonalClients();
         void cutCustomerHair();
@@ -215,6 +216,40 @@ Thing 1) Hairdressing Salon
     void washHair(Hairdresser hairdresser);
 
  };
+
+ int HairdressingSalon::Hairdresser::getNumberOfPersonalClients()
+ {
+     return numberOfPersonalClients;
+ }
+
+ void HairdressingSalon::Hairdresser::cutCustomerHair()
+ {
+
+ }
+        
+void HairdressingSalon::Hairdresser::takeBreak()
+{
+
+}
+
+void HairdressingSalon::cutHair(Hairdresser hairdresser)
+{
+    hairdresser.numberOfPersonalClients += 1;
+}
+    
+void HairdressingSalon::colourHair(Hairdresser hairdresser)
+{
+    hairdresser.numberOfPersonalClients += 1;
+}
+
+void HairdressingSalon::washHair(Hairdresser hairdresser)
+{
+    hairdresser.numberOfPersonalClients += 1;
+}
+
+
+
+
 
 /*
 Thing 2) Audio Compressor Limiter Effect
