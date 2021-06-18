@@ -108,7 +108,10 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
-
+struct Person 
+{
+    
+};
 
 
 
@@ -141,15 +144,10 @@ Thing 1) Hairdressing Salon
  */
  struct HairdressingSalon
  {
-    // Number of Hairdressers
     int numHairdressers = 4;
-    // Number of Colourists
     int numColourists = 2;
-    // Number of Units of Shampoo
     int numUnitsShampoo = 84;
-    // Number of Units of Hair Colour
     int numUnitsHairColour = 35;
-    // Number of Customers
     int numCustomers = 5;
 
     struct Hairdresser
@@ -165,11 +163,8 @@ Thing 1) Hairdressing Salon
         void takeBreak();
     };
 
-    // Cut Hair
     void cutHair(Hairdresser hairdresser);
-    // Colour Hair
     void colourHair(Hairdresser hairdresser);
-    // Wash Hair
     void washHair(Hairdresser hairdresser);
 
  };
@@ -190,22 +185,14 @@ Thing 2) Audio Compressor Limiter Effect
 
 struct AudioCompLimiterEffect
 {
-    // Threshold for Compressor
     float compThreshold = -6.f;
-    // Make Up Gain for Compressor
     float compMakeupGain = +3.f;
-    // Threshold for Limiter
     float limiterThreshold = -3.f;
-    // Amount of gain change
     float gainChange = 0.f;
-    // Compression ratio
     float compRatio = 3.f;
 
-    // Compress Audio
     void compressAudio(float compRatio, float compThreshold);
-    // Limit Audio
     void limitAudio();
-    // Change Audio Gain
     void changeGain(float gainChange);
 
 
@@ -227,22 +214,14 @@ Thing 3) Gym
 
 struct Gym 
 {
-    // Annual Fee
     float annualFee = 350.f;
-    // Number of Customers
     int numberOfCustomers = 100;
-    // Number of Running Machines
     int numberOfRunningMachines = 25;
-    // Staff Wages
     float staffWages = 25000.f;
-    // Annual Income
     float annualIncome = 35000.f;
 
-    // Pay Staff
     void payStaff(std::string staffName);
-    // Service Machines
     void serviceMachines(int machineId);
-    // Invoice Customers
     void invoiceCustomer(std::string customerName);
 
 };
@@ -263,15 +242,10 @@ Thing 4) Bicycle
 
 struct Bicycle
 {
-    // Rear Tyre Pressure
     int rearTyrePressure = 45;
-    // Front Tyre Pressure
     int frontTyrePressure = 45;
-    // Height of Saddle
     float heightOfSaddle = 8.75f;
-    // Height of Handlebars
     float heightOfHandlebars = 7.5f;
-    // Wheel diameter
     int wheelDiameter = 28;
 
     struct Pannier
@@ -287,11 +261,8 @@ struct Bicycle
         void removePannier();
     };
 
-    // Adjust Tyre Pressure
     void adjustTyrePressure(float rearTyrePressure, float frontTyrePressure);
-    // Adjust Saddle Height
     bool adjustSaddleHeight(float newSaddleHeight);
-    // Turn Front Wheel
     void turnFrontWheel(float amount);
 };
 
