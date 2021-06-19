@@ -178,16 +178,6 @@ void Person::Run(int howFast, bool startWithLeftFoot)
 
 /*
 Thing 1) Hairdressing Salon
-5 properties:
-    1) Number of Hairdressers
-    2) Number of Colourists
-    3) Number of Units of Shampoo
-    4) Number of Units of Hair Colour
-    5) Number of Customers
-3 things it can do:
-    1) Cut Hair
-    2) Colour Hair
-    3) Wash Hair
  */
 struct HairdressingSalon
 {
@@ -252,16 +242,6 @@ void HairdressingSalon::washHair(Hairdresser hairdresser)
 
 /*
 Thing 2) Audio Compressor Limiter Effect
-5 properties:
-    1) Threshold for Compressor
-    2) Make Up Gain for Compressor
-    3) Threshold for Limiter
-    4) Amount of Gain Change
-    5) Compression ratio
-3 things it can do:
-    1) Compress Audio
-    2) Limit Audio 
-    3) Change Audio Gain
  */
 
 struct AudioCompLimiterEffect
@@ -299,16 +279,6 @@ void AudioCompLimiterEffect::changeGain(float newGain)
 
 /*
 Thing 3) Gym
-5 properties:
-    1) Annual Fee
-    2) Number of Customers
-    3) Number of Running Machines
-    4) Staff Wages
-    5) Annual Income
-3 things it can do:
-    1) Pay Staff
-    2) Service Machines
-    3) Invoice Customers
  */
 
 struct Gym 
@@ -359,16 +329,6 @@ void Gym::invoiceCustomer(std::string customerName)
 
 /*
 Thing 4) Bicycle
-5 properties:
-    1) Rear Tyre Pressure
-    2) Front Tyre Pressure
-    3) Height of Saddle
-    4) Height of Handlebars
-    5) Wheel diameter
-3 things it can do:
-    1) Adjust Tyre Pressure
-    2) Adjust Saddle Height
-    3) Turn Front Wheel
  */
 
 struct Bicycle
@@ -432,16 +392,6 @@ void Bicycle::turnFrontWheel(float amount)
 
 /*
 Thing 5) Lights
-5 properties:
-    1) Counter Lights Dimmer Setting
-    2) Main Lights Dimmer Setting
-    3) Total Wattage
-    4) Number of Bulbs
-    5) Wattage of Bulb
-3 things it can do:
-    1) Light Counter 
-    2) Adjust Counter Dimmer Setting
-    3) Adjust Main Dimmer Setting
  */
 
 struct Lights
@@ -474,16 +424,6 @@ void Lights::adjustMainDimmerSetting(int newMainDimmerSetting)
 
 /*
 Thing 6) Cooker
-5 properties:
-    1) Oven Temperature
-    2) Cooking Time
-    3) Oven Shelf Height Setting
-    4) Cooker Height
-    5) Cooker Width
-3 things it can do:
-    1) Set Oven Temperature
-    2) Set Cooking Time
-    3) Adjust Shelf Height
  */
 
 struct Cooker
@@ -516,16 +456,6 @@ void Cooker::adjustShelfHeight(int height)
 
 /*
 Thing 7) Fridge
-5 properties:
-    1) Fridge Temperature
-    2) Freezer Temperature
-    3) Fridge Capacity
-    4) Fridge Height
-    5) Fridge Width
-3 things it can do:
-    1) Set Fridge Temperature
-    2) Set Freezer Temperature
-    3) Defrost
  */
 
 struct Fridge 
@@ -559,16 +489,6 @@ void Fridge::defrost(int time)
 
 /*
 Thing 8) Sink
-5 properties:
-    1) Cold Water Flow
-    2) Hot Water Flow
-    3) Water Temperature
-    4) Capacity
-    5) Water Outflow Rate
-3 things it can do:
-    1) Adjust Water Temperature
-    2) Set Cold Water Flow
-    3) Set Hot Water Flow
  */
 
 struct Sink
@@ -601,16 +521,6 @@ void Sink::setHotWaterFlow(int newFlow)
 
 /*
 Thing 9) Toaster
-5 properties:
-    1) Timer Setting
-    2) Width 
-    3) Height 
-    4) Depth 
-    5) Max Width of Toastable Objects
-3 things it can do:
-    1) Set Timer
-    2) Raise Toast
-    3) Lower Toast
  */
 
 struct Toaster
@@ -646,16 +556,6 @@ void lowerToast()
 
 /*
 Thing 10) Kitchen
-5 properties:
-    1) Lights
-    2) Cooker
-    3) Fridge
-    4) Sink
-    5) Toaster
-3 things it can do:
-    1) Wash Dishes
-    2) Cook Food
-    3) Cool Food
  */
 
 struct Kitchen
