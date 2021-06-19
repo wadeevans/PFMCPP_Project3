@@ -108,9 +108,59 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Person 
+{
+    int age;
+    int height;
+    float hairLength;
+    float GPA; // I have no idea what this is!!
+    unsigned int SATScore;
+    int distanceTravelled;
+
+    struct Limb
+    {
+        int sizeOfStep;
 
 
+        void stepForward();
+        int stepSize();
 
+    };
+
+    Limb leftFoot;
+    Limb rightFoot;
+
+    void Run(int howFast, bool startWithLeftFoot);
+};
+
+void Person::Limb::stepForward()
+{
+
+}
+
+int Person::Limb::stepSize()
+{
+    return sizeOfStep;
+}
+
+void Person::Run(int howFast, bool startWithLeftFoot)
+{
+    if (startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+        distanceTravelled += leftFoot.stepSize() + rightFoot.stepSize();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    int overallStepSize = leftFoot.stepSize() + rightFoot.stepSize();
+
+    distanceTravelled *= howFast * overallStepSize;
+
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -128,28 +178,13 @@ struct CarWash
 
 /*
 Thing 1) Hairdressing Salon
-5 properties:
-    1) Number of Hairdressers
-    2) Number of Colourists
-    3) Number of Units of Shampoo
-    4) Number of Units of Hair Colour
-    5) Number of Customers
-3 things it can do:
-    1) Cut Hair
-    2) Colour Hair
-    3) Wash Hair
  */
- struct HairdressingSalon
- {
-    // Number of Hairdressers
+struct HairdressingSalon
+{
     int numHairdressers = 4;
-    // Number of Colourists
     int numColourists = 2;
-    // Number of Units of Shampoo
     int numUnitsShampoo = 84;
-    // Number of Units of Hair Colour
     int numUnitsHairColour = 35;
-    // Number of Customers
     int numCustomers = 5;
 
     struct Hairdresser
@@ -159,120 +194,151 @@ Thing 1) Hairdressing Salon
         bool qualifiedToColourHair = true;
         float haircutRate = 65.0f;
         std::string name = "Tracey";
+        int numberOfPersonalClients = 1;
 
         int getNumberOfPersonalClients();
         void cutCustomerHair();
         void takeBreak();
     };
 
-    // Cut Hair
     void cutHair(Hairdresser hairdresser);
-    // Colour Hair
     void colourHair(Hairdresser hairdresser);
-    // Wash Hair
     void washHair(Hairdresser hairdresser);
+};
 
- };
+int HairdressingSalon::Hairdresser::getNumberOfPersonalClients()
+{
+    return numberOfPersonalClients;
+}
+
+void HairdressingSalon::Hairdresser::cutCustomerHair()
+{
+
+}
+        
+void HairdressingSalon::Hairdresser::takeBreak()
+{
+
+}
+
+void HairdressingSalon::cutHair(Hairdresser hairdresser)
+{
+    hairdresser.numberOfPersonalClients += 1;
+}
+    
+void HairdressingSalon::colourHair(Hairdresser hairdresser)
+{
+    hairdresser.numberOfPersonalClients += 1;
+}
+
+void HairdressingSalon::washHair(Hairdresser hairdresser)
+{
+    hairdresser.numberOfPersonalClients += 1;
+}
+
+
+
+
 
 /*
 Thing 2) Audio Compressor Limiter Effect
-5 properties:
-    1) Threshold for Compressor
-    2) Make Up Gain for Compressor
-    3) Threshold for Limiter
-    4) Amount of Gain Change
-    5) Compression ratio
-3 things it can do:
-    1) Compress Audio
-    2) Limit Audio 
-    3) Change Audio Gain
  */
 
 struct AudioCompLimiterEffect
 {
-    // Threshold for Compressor
     float compThreshold = -6.f;
-    // Make Up Gain for Compressor
     float compMakeupGain = +3.f;
-    // Threshold for Limiter
     float limiterThreshold = -3.f;
-    // Amount of gain change
     float gainChange = 0.f;
-    // Compression ratio
     float compRatio = 3.f;
 
-    // Compress Audio
-    void compressAudio(float compRatio, float compThreshold);
-    // Limit Audio
+    void compressAudio(float compressionRatio, float compressionThreshold);
     void limitAudio();
-    // Change Audio Gain
-    void changeGain(float gainChange);
+    void changeGain(float newGain);
 
 
 };
 
+void AudioCompLimiterEffect::compressAudio(float compressionRatio, float compressionThreshold)
+{
+    compRatio = compressionRatio;
+    compThreshold = compressionThreshold;
+}
+
+void AudioCompLimiterEffect::limitAudio()
+{
+
+}
+
+void AudioCompLimiterEffect::changeGain(float newGain)
+{
+    gainChange = newGain;
+}
+
+
+
 /*
 Thing 3) Gym
-5 properties:
-    1) Annual Fee
-    2) Number of Customers
-    3) Number of Running Machines
-    4) Staff Wages
-    5) Annual Income
-3 things it can do:
-    1) Pay Staff
-    2) Service Machines
-    3) Invoice Customers
  */
 
 struct Gym 
 {
-    // Annual Fee
     float annualFee = 350.f;
-    // Number of Customers
     int numberOfCustomers = 100;
-    // Number of Running Machines
     int numberOfRunningMachines = 25;
-    // Staff Wages
     float staffWages = 25000.f;
-    // Annual Income
     float annualIncome = 35000.f;
 
-    // Pay Staff
     void payStaff(std::string staffName);
-    // Service Machines
     void serviceMachines(int machineId);
-    // Invoice Customers
     void invoiceCustomer(std::string customerName);
 
 };
 
+void Gym::payStaff(std::string staffName)
+{
+    if (staffName == "Rachel")
+    {
+
+    }
+    else
+    {
+
+    }
+}
+    
+void Gym::serviceMachines(int machineId)
+{
+    if (machineId == 1)
+    {
+
+    }
+}
+    
+void Gym::invoiceCustomer(std::string customerName)
+{
+    if (customerName == "Rachel")
+    {
+
+    }
+    else
+    {
+
+    }
+}
+
 /*
 Thing 4) Bicycle
-5 properties:
-    1) Rear Tyre Pressure
-    2) Front Tyre Pressure
-    3) Height of Saddle
-    4) Height of Handlebars
-    5) Wheel diameter
-3 things it can do:
-    1) Adjust Tyre Pressure
-    2) Adjust Saddle Height
-    3) Turn Front Wheel
  */
 
 struct Bicycle
 {
-    // Rear Tyre Pressure
     int rearTyrePressure = 45;
-    // Front Tyre Pressure
     int frontTyrePressure = 45;
-    // Height of Saddle
     float heightOfSaddle = 8.75f;
-    // Height of Handlebars
     float heightOfHandlebars = 7.5f;
-    // Wheel diameter
     int wheelDiameter = 28;
+    float frontWheelAngle = 0.f;
 
     struct Pannier
     {
@@ -287,221 +353,238 @@ struct Bicycle
         void removePannier();
     };
 
-    // Adjust Tyre Pressure
-    void adjustTyrePressure(float rearTyrePressure, float frontTyrePressure);
-    // Adjust Saddle Height
+    void adjustTyrePressure(int newRearTyrePressure, int newFrontTyrePressure);
     bool adjustSaddleHeight(float newSaddleHeight);
-    // Turn Front Wheel
     void turnFrontWheel(float amount);
 };
 
+void Bicycle::Pannier::openPannier()
+{
+
+}
+
+void Bicycle::Pannier::closePannier()
+{
+
+}
+        
+void Bicycle::Pannier::removePannier()
+{
+
+}
+
+void Bicycle::adjustTyrePressure(int newRearTyrePressure, int newFrontTyrePressure)
+{
+    rearTyrePressure = newRearTyrePressure;
+    frontTyrePressure = newFrontTyrePressure;
+}
+    
+bool Bicycle::adjustSaddleHeight(float newSaddleHeight)
+{
+    heightOfSaddle = newSaddleHeight;
+    return true;
+}
+    
+void Bicycle::turnFrontWheel(float amount)
+{
+    frontWheelAngle += amount;
+}
+
 /*
 Thing 5) Lights
-5 properties:
-    1) Counter Lights Dimmer Setting
-    2) Main Lights Dimmer Setting
-    3) Total Wattage
-    4) Number of Bulbs
-    5) Wattage of Bulb
-3 things it can do:
-    1) Light Counter 
-    2) Adjust Counter Dimmer Setting
-    3) Adjust Main Dimmer Setting
  */
 
 struct Lights
 {
-    // Counter Lights Dimmer Setting
     int counterLightDimmerSetting = 75;
-    // Main Lights Dimmer Setting
     int mainLightDimmerSetting = 100;
-    // Total Wattage
     int TotalWattage = 300;
-    // Number of Bulbs
     int numberOfBulbs = 5;
-    // Wattage of Bulb
     int wattageOfBulb = 60;
-
-    // Light Counter 
+ 
     void lightCounter();
-    // Adjust Counter Dimmer Setting
-    void adjustCounterDimmerSetting(float newCounterDimmerSetting);
-    // Adjust Main Dimmer Setting
-    void adjustMainDimmerSetting(float newMainDimmerSetting);
+    void adjustCounterDimmerSetting(int newCounterDimmerSetting);
+    void adjustMainDimmerSetting(int newMainDimmerSetting);
 };
+
+void Lights::lightCounter()
+{
+
+}
+    
+void Lights::adjustCounterDimmerSetting(int newCounterDimmerSetting)
+{
+    counterLightDimmerSetting = newCounterDimmerSetting;
+}
+    
+void Lights::adjustMainDimmerSetting(int newMainDimmerSetting)
+{
+    mainLightDimmerSetting = newMainDimmerSetting;
+}
 
 /*
 Thing 6) Cooker
-5 properties:
-    1) Oven Temperature
-    2) Cooking Time
-    3) Oven Shelf Height Setting
-    4) Cooker Height
-    5) Cooker Width
-3 things it can do:
-    1) Set Oven Temperature
-    2) Set Cooking Time
-    3) Adjust Shelf Height
  */
 
 struct Cooker
 {
-    // Oven Temperature
     int ovenTemperature = 200;
-    // Cooking Time
     int cookingTime = 120;
-    // Oven Shelf Height Setting
     int ovenShelfHeight = 3;
-    // Cooker Height
     float cookerHeight = 90.f;
-    // Cooker Width
     float cookerWidth = 60.f;
 
-    // Set Oven Temperature
     void setOvenTemperature(int temperature);
-    // Set Cooking Time
     void setCookingTime(int time);
-    // Adjust Shelf Height
     void adjustShelfHeight(int height);
 };
 
+void Cooker::setOvenTemperature(int temperature)
+{
+    ovenTemperature = temperature;
+}
+    
+void Cooker::setCookingTime(int time)
+{
+    cookingTime = time;
+}
+    
+void Cooker::adjustShelfHeight(int height)
+{
+    ovenShelfHeight = height;
+}
+
 /*
 Thing 7) Fridge
-5 properties:
-    1) Fridge Temperature
-    2) Freezer Temperature
-    3) Fridge Capacity
-    4) Fridge Height
-    5) Fridge Width
-3 things it can do:
-    1) Set Fridge Temperature
-    2) Set Freezer Temperature
-    3) Defrost
  */
 
 struct Fridge 
 {
-    // Fridge Temperature
     int fridgeTemperature = 5;
-    // Freezer Temperature
     int freezerTemperature = -18;
-    // Fridge Capacity
     float fridgeCapacity = 450;
-    // Fridge Height
     float fridgeHeight = 120;
-    // Fridge Width
     float fridgeWidth = 60;
+    int defrostTime = 60;
 
-    // Set Fridge Temperature
     void setFridgeTemperature(int temperature);
-    // Set Freezer Temperature
     void setFreezerTemperature(int temperature);
-    // Defrost
     void defrost(int time);
 };
 
+void Fridge::setFridgeTemperature(int temperature)
+{
+    fridgeTemperature = temperature;
+}
+
+void Fridge::setFreezerTemperature(int temperature)
+{
+    freezerTemperature = temperature;
+}
+
+void Fridge::defrost(int time)
+{
+    defrostTime = time;
+}
+
 /*
 Thing 8) Sink
-5 properties:
-    1) Cold Water Flow
-    2) Hot Water Flow
-    3) Water Temperature
-    4) Capacity
-    5) Water Outflow Rate
-3 things it can do:
-    1) Adjust Water Temperature
-    2) Set Cold Water Flow
-    3) Set Hot Water Flow
  */
 
 struct Sink
 {
-    // Cold Water Flow
     int coldWaterFlow = 8;
-    // Hot Water Flow
     int hotWaterFlow = 6;
-    // Water Temperature
     int waterTemperature = 40;
-    // Capacity
     int capacity = 24;
-    // Water Outflow Rate
     int waterOutflowRate = 13;
 
-    // Adjust Water Temperature
     void adjustWaterTemperature(int temperature);
-    // Set Cold Water Flow
     void setColdWaterFlow(int newFlow);
-    // Set Hot Water Flow
     void setHotWaterFlow(int newFlow);
 };
 
+void Sink::adjustWaterTemperature(int temperature)
+{
+    waterTemperature = temperature;
+}
+    
+void Sink::setColdWaterFlow(int newFlow)
+{
+    coldWaterFlow = newFlow;
+}
+    
+void Sink::setHotWaterFlow(int newFlow)
+{
+    hotWaterFlow = newFlow;
+}
+
 /*
 Thing 9) Toaster
-5 properties:
-    1) Timer Setting
-    2) Width 
-    3) Height 
-    4) Depth 
-    5) Max Width of Toastable Objects
-3 things it can do:
-    1) Set Timer
-    2) Raise Toast
-    3) Lower Toast
  */
 
 struct Toaster
 {
-    // Timer Setting
     int timerSetting = 30;
-    // Width
     float width = 30.f; 
-    // Height 
-    float height = 20.f;
-    // Depth 
+    float height = 20.f; 
     float depth = 22.f;
-    // Max Width of Toastable Objects
     float maxWidth = 2.5;
 
-    // Set Timer
     void setTimer(int time);
-    // Raise Toast
     void raiseToast();
-    // Lower Toast
     void lowerToast();
 };
+
+void Toaster::setTimer(int time)
+{
+    timerSetting = time;
+}
+    
+void Toaster::raiseToast()
+{
+
+}
+    
+void Toaster::lowerToast()
+{
+
+}
 
 
 
 
 /*
 Thing 10) Kitchen
-5 properties:
-    1) Lights
-    2) Cooker
-    3) Fridge
-    4) Sink
-    5) Toaster
-3 things it can do:
-    1) Wash Dishes
-    2) Cook Food
-    3) Cool Food
  */
 
 struct Kitchen
 {
-    Lights lights;
-    Cooker cooker;
-    Fridge fridge;
-    Sink sink;
+    Lights kitchenLights;
+    Cooker kitchenCooker;
+    Fridge kitchenFridge;
+    Sink kitchenSink;
     Toaster toaster;
 
-    // Wash Dishes
-    void washDishes(Sink sink);
-    // Cook Food
-    void cookFood(Cooker cooker);
-    // Cool Food
-    void coolFood(Fridge fridge);
+    void washDishes(Sink& sink);
+    void cookFood(Cooker& cooker);
+    void coolFood(Fridge& fridge);
 };
+
+void Kitchen::washDishes(Sink& sink)
+{
+    sink.adjustWaterTemperature(42);
+}
+    
+void Kitchen::cookFood(Cooker& cooker)
+{
+    cooker.setOvenTemperature(180);
+}
+    
+void Kitchen::coolFood(Fridge& fridge)
+{
+    fridge.setFridgeTemperature(5);
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
