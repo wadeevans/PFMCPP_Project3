@@ -325,6 +325,38 @@ struct Gym
 
 };
 
+void Gym::payStaff(std::string staffName)
+{
+    if (staffName == "Rachel")
+    {
+
+    }
+    else
+    {
+
+    }
+}
+    
+void Gym::serviceMachines(int machineId)
+{
+    if (machineId == 1)
+    {
+
+    }
+}
+    
+void Gym::invoiceCustomer(std::string customerName)
+{
+    if (customerName == "Rachel")
+    {
+
+    }
+    else
+    {
+
+    }
+}
+
 /*
 Thing 4) Bicycle
 5 properties:
@@ -346,6 +378,7 @@ struct Bicycle
     float heightOfSaddle = 8.75f;
     float heightOfHandlebars = 7.5f;
     int wheelDiameter = 28;
+    float frontWheelAngle = 0.f;
 
     struct Pannier
     {
@@ -360,10 +393,42 @@ struct Bicycle
         void removePannier();
     };
 
-    void adjustTyrePressure(float rearTyrePressure, float frontTyrePressure);
+    void adjustTyrePressure(int newRearTyrePressure, int newFrontTyrePressure);
     bool adjustSaddleHeight(float newSaddleHeight);
     void turnFrontWheel(float amount);
 };
+
+void Bicycle::Pannier::openPannier()
+{
+
+}
+
+void Bicycle::Pannier::closePannier()
+{
+
+}
+        
+void Bicycle::Pannier::removePannier()
+{
+
+}
+
+void Bicycle::adjustTyrePressure(int newRearTyrePressure, int newFrontTyrePressure)
+{
+    rearTyrePressure = newRearTyrePressure;
+    frontTyrePressure = newFrontTyrePressure;
+}
+    
+bool Bicycle::adjustSaddleHeight(float newSaddleHeight)
+{
+    heightOfSaddle = newSaddleHeight;
+    return true;
+}
+    
+void Bicycle::turnFrontWheel(float amount)
+{
+    frontWheelAngle += amount;
+}
 
 /*
 Thing 5) Lights
@@ -381,24 +446,31 @@ Thing 5) Lights
 
 struct Lights
 {
-    // Counter Lights Dimmer Setting
     int counterLightDimmerSetting = 75;
-    // Main Lights Dimmer Setting
     int mainLightDimmerSetting = 100;
-    // Total Wattage
     int TotalWattage = 300;
-    // Number of Bulbs
     int numberOfBulbs = 5;
-    // Wattage of Bulb
     int wattageOfBulb = 60;
-
-    // Light Counter 
+ 
     void lightCounter();
-    // Adjust Counter Dimmer Setting
-    void adjustCounterDimmerSetting(float newCounterDimmerSetting);
-    // Adjust Main Dimmer Setting
-    void adjustMainDimmerSetting(float newMainDimmerSetting);
+    void adjustCounterDimmerSetting(int newCounterDimmerSetting);
+    void adjustMainDimmerSetting(int newMainDimmerSetting);
 };
+
+void Lights::lightCounter()
+{
+
+}
+    
+void Lights::adjustCounterDimmerSetting(int newCounterDimmerSetting)
+{
+    counterLightDimmerSetting = newCounterDimmerSetting;
+}
+    
+void Lights::adjustMainDimmerSetting(int newMainDimmerSetting)
+{
+    mainLightDimmerSetting = newMainDimmerSetting;
+}
 
 /*
 Thing 6) Cooker
@@ -416,24 +488,31 @@ Thing 6) Cooker
 
 struct Cooker
 {
-    // Oven Temperature
     int ovenTemperature = 200;
-    // Cooking Time
     int cookingTime = 120;
-    // Oven Shelf Height Setting
     int ovenShelfHeight = 3;
-    // Cooker Height
     float cookerHeight = 90.f;
-    // Cooker Width
     float cookerWidth = 60.f;
 
-    // Set Oven Temperature
     void setOvenTemperature(int temperature);
-    // Set Cooking Time
     void setCookingTime(int time);
-    // Adjust Shelf Height
     void adjustShelfHeight(int height);
 };
+
+void Cooker::setOvenTemperature(int temperature)
+{
+    ovenTemperature = temperature;
+}
+    
+void Cooker::setCookingTime(int time)
+{
+    cookingTime = time;
+}
+    
+void Cooker::adjustShelfHeight(int height)
+{
+    ovenShelfHeight = height;
+}
 
 /*
 Thing 7) Fridge
@@ -451,24 +530,32 @@ Thing 7) Fridge
 
 struct Fridge 
 {
-    // Fridge Temperature
     int fridgeTemperature = 5;
-    // Freezer Temperature
     int freezerTemperature = -18;
-    // Fridge Capacity
     float fridgeCapacity = 450;
-    // Fridge Height
     float fridgeHeight = 120;
-    // Fridge Width
     float fridgeWidth = 60;
+    int defrostTime = 60;
 
-    // Set Fridge Temperature
     void setFridgeTemperature(int temperature);
-    // Set Freezer Temperature
     void setFreezerTemperature(int temperature);
-    // Defrost
     void defrost(int time);
 };
+
+void Fridge::setFridgeTemperature(int temperature)
+{
+    fridgeTemperature = temperature;
+}
+
+void Fridge::setFreezerTemperature(int temperature)
+{
+    freezerTemperature = temperature;
+}
+
+void Fridge::defrost(int time)
+{
+    defrostTime = time;
+}
 
 /*
 Thing 8) Sink
@@ -486,24 +573,31 @@ Thing 8) Sink
 
 struct Sink
 {
-    // Cold Water Flow
     int coldWaterFlow = 8;
-    // Hot Water Flow
     int hotWaterFlow = 6;
-    // Water Temperature
     int waterTemperature = 40;
-    // Capacity
     int capacity = 24;
-    // Water Outflow Rate
     int waterOutflowRate = 13;
 
-    // Adjust Water Temperature
     void adjustWaterTemperature(int temperature);
-    // Set Cold Water Flow
     void setColdWaterFlow(int newFlow);
-    // Set Hot Water Flow
     void setHotWaterFlow(int newFlow);
 };
+
+void Sink::adjustWaterTemperature(int temperature)
+{
+    waterTemperature = temperature;
+}
+    
+void Sink::setColdWaterFlow(int newFlow)
+{
+    coldWaterFlow = newFlow;
+}
+    
+void Sink::setHotWaterFlow(int newFlow)
+{
+    hotWaterFlow = newFlow;
+}
 
 /*
 Thing 9) Toaster
@@ -521,24 +615,31 @@ Thing 9) Toaster
 
 struct Toaster
 {
-    // Timer Setting
     int timerSetting = 30;
-    // Width
     float width = 30.f; 
-    // Height 
-    float height = 20.f;
-    // Depth 
+    float height = 20.f; 
     float depth = 22.f;
-    // Max Width of Toastable Objects
     float maxWidth = 2.5;
 
-    // Set Timer
     void setTimer(int time);
-    // Raise Toast
     void raiseToast();
-    // Lower Toast
     void lowerToast();
 };
+
+void Toaster::setTimer(int time)
+{
+    timerSetting = time;
+}
+    
+void Toaster::raiseToast()
+{
+
+}
+    
+void lowerToast()
+{
+
+}
 
 
 
@@ -559,19 +660,31 @@ Thing 10) Kitchen
 
 struct Kitchen
 {
-    Lights lights;
-    Cooker cooker;
-    Fridge fridge;
-    Sink sink;
+    Lights kitchenLights;
+    Cooker kitchenCooker;
+    Fridge kitchenFridge;
+    Sink kitchenSink;
     Toaster toaster;
 
-    // Wash Dishes
     void washDishes(Sink sink);
-    // Cook Food
     void cookFood(Cooker cooker);
-    // Cool Food
     void coolFood(Fridge fridge);
 };
+
+void Kitchen::washDishes(Sink sink)
+{
+    sink.adjustWaterTemperature(42);
+}
+    
+void Kitchen::cookFood(Cooker cooker)
+{
+    cooker.setOvenTemperature(180);
+}
+    
+void Kitchen::coolFood(Fridge fridge)
+{
+    fridge.setFridgeTemperature(5);
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
