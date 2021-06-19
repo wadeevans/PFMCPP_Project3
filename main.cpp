@@ -566,22 +566,22 @@ struct Kitchen
     Sink kitchenSink;
     Toaster toaster;
 
-    void washDishes(Sink sink);
-    void cookFood(Cooker cooker);
-    void coolFood(Fridge fridge);
+    void washDishes(Sink& sink);
+    void cookFood(Cooker& cooker);
+    void coolFood(Fridge& fridge);
 };
 
-void Kitchen::washDishes(Sink sink)
+void Kitchen::washDishes(Sink& sink)
 {
     sink.adjustWaterTemperature(42);
 }
     
-void Kitchen::cookFood(Cooker cooker)
+void Kitchen::cookFood(Cooker& cooker)
 {
     cooker.setOvenTemperature(180);
 }
     
-void Kitchen::coolFood(Fridge fridge)
+void Kitchen::coolFood(Fridge& fridge)
 {
     fridge.setFridgeTemperature(5);
 }
