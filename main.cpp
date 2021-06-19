@@ -281,8 +281,8 @@ struct AudioCompLimiterEffect
 
 void AudioCompLimiterEffect::compressAudio(float compressionRatio, float compressionThreshold)
 {
-    this->compRatio = compressionRatio;
-    this->compThreshold = compressionThreshold;
+    compRatio = compressionRatio;
+    compThreshold = compressionThreshold;
 }
 
 void AudioCompLimiterEffect::limitAudio()
@@ -292,7 +292,7 @@ void AudioCompLimiterEffect::limitAudio()
 
 void AudioCompLimiterEffect::changeGain(float newGain)
 {
-    this->gainChange = newGain;
+    gainChange = newGain;
 }
 
 
