@@ -546,7 +546,7 @@ void Toaster::raiseToast()
 
 }
     
-void lowerToast()
+void Toaster::lowerToast()
 {
 
 }
