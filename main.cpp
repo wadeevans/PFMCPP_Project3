@@ -92,6 +92,8 @@ struct HairdressingSalon
     int numUnitsHairColour = 35;
     int numCustomers = 5;
 
+    HairdressingSalon(); // The Constructor
+
     struct Hairdresser
     {
         int yearsExperience = 5;
@@ -100,6 +102,8 @@ struct HairdressingSalon
         float haircutRate = 65.0f;
         std::string name = "Tracey";
         int numberOfPersonalClients = 1;
+
+        Hairdresser(); // The Constructor
 
         int getNumberOfPersonalClients();
         void cutCustomerHair();
@@ -110,6 +114,16 @@ struct HairdressingSalon
     void colourHair(Hairdresser hairdresser);
     void washHair(Hairdresser hairdresser);
 };
+
+HairdressingSalon::HairdressingSalon()
+{
+    numHairdressers = 4;
+}
+
+HairdressingSalon::Hairdresser::Hairdresser()
+{
+    haircutRate = 65.f;
+}
 
 int HairdressingSalon::Hairdresser::getNumberOfPersonalClients()
 {
