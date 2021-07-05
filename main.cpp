@@ -171,12 +171,19 @@ struct AudioCompLimiterEffect
     float gainChange = 0.f;
     float compRatio = 3.f;
 
+    AudioCompLimiterEffect(); // The Constructor
+
     void compressAudio(float compressionRatio, float compressionThreshold);
     void limitAudio();
     void changeGain(float newGain);
 
 
 };
+
+AudioCompLimiterEffect::AudioCompLimiterEffect()
+{
+    compThreshold = 0.f;
+}
 
 void AudioCompLimiterEffect::compressAudio(float compressionRatio, float compressionThreshold)
 {
@@ -208,11 +215,18 @@ struct Gym
     float staffWages = 25000.f;
     float annualIncome = 35000.f;
 
+    Gym(); // The Constructor
+
     void payStaff(std::string staffName);
     void serviceMachines(int machineId);
     void invoiceCustomer(std::string customerName);
 
 };
+
+Gym::Gym() 
+{
+    annualFee = 350.f;
+}
 
 void Gym::payStaff(std::string staffName)
 {
@@ -267,15 +281,24 @@ struct Bicycle
         float pannierWidth = 30;
         float pannierLength = 45;
 
+        Pannier();
+
         void openPannier();
         void closePannier();
         void removePannier();
     };
 
+    Bicycle();
+
     void adjustTyrePressure(int newRearTyrePressure, int newFrontTyrePressure);
     bool adjustSaddleHeight(float newSaddleHeight);
     void turnFrontWheel(float amount);
 };
+
+Bicycle::Pannier::Pannier()
+{
+
+}
 
 void Bicycle::Pannier::openPannier()
 {
@@ -288,6 +311,11 @@ void Bicycle::Pannier::closePannier()
 }
         
 void Bicycle::Pannier::removePannier()
+{
+
+}
+
+Bicycle::Bicycle()
 {
 
 }
@@ -320,11 +348,18 @@ struct Lights
     int TotalWattage = 300;
     int numberOfBulbs = 5;
     int wattageOfBulb = 60;
+
+    Lights();
  
     void lightCounter();
     void adjustCounterDimmerSetting(int newCounterDimmerSetting);
     void adjustMainDimmerSetting(int newMainDimmerSetting);
 };
+
+Lights::Lights()
+{
+    TotalWattage = 0;
+}
 
 void Lights::lightCounter()
 {
@@ -353,10 +388,18 @@ struct Cooker
     float cookerHeight = 90.f;
     float cookerWidth = 60.f;
 
+    Cooker();
+
     void setOvenTemperature(int temperature);
     void setCookingTime(int time);
     void adjustShelfHeight(int height);
 };
+
+Cooker::Cooker()
+{
+    ovenTemperature = 200;
+    cookingTime = 0;
+}
 
 void Cooker::setOvenTemperature(int temperature)
 {
@@ -386,10 +429,17 @@ struct Fridge
     float fridgeWidth = 60;
     int defrostTime = 60;
 
+    Fridge();
+
     void setFridgeTemperature(int temperature);
     void setFreezerTemperature(int temperature);
     void defrost(int time);
 };
+
+Fridge::Fridge()
+{
+    fridgeTemperature = 5;
+}
 
 void Fridge::setFridgeTemperature(int temperature)
 {
@@ -418,10 +468,18 @@ struct Sink
     int capacity = 24;
     int waterOutflowRate = 13;
 
+    Sink();
+
     void adjustWaterTemperature(int temperature);
     void setColdWaterFlow(int newFlow);
     void setHotWaterFlow(int newFlow);
 };
+
+Sink::Sink()
+{
+    coldWaterFlow = 0;
+    hotWaterFlow = 0;
+}
 
 void Sink::adjustWaterTemperature(int temperature)
 {
@@ -450,10 +508,17 @@ struct Toaster
     float depth = 22.f;
     float maxWidth = 2.5;
 
+    Toaster();
+
     void setTimer(int time);
     void raiseToast();
     void lowerToast();
 };
+
+Toaster::Toaster()
+{
+
+}
 
 void Toaster::setTimer(int time)
 {
@@ -485,10 +550,17 @@ struct Kitchen
     Sink kitchenSink;
     Toaster toaster;
 
+    Kitchen();
+
     void washDishes(Sink& sink);
     void cookFood(Cooker& cooker);
     void coolFood(Fridge& fridge);
 };
+
+Kitchen::Kitchen()
+{
+    
+}
 
 void Kitchen::washDishes(Sink& sink)
 {
