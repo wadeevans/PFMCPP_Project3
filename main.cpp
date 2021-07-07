@@ -651,6 +651,10 @@ int main()
     Kitchen kitchen;
     kitchen.cookFood(cooker);
 
+    std::cout << hairdresser.name << " has " << hairdresser.numberOfPersonalClients << " personal client" <<(hairdresser.numberOfPersonalClients == 1 ? "." : "s.") << std::endl;
+
+    std::cout << "The toaster's dimensions are " << toaster.width << " cm wide " << "by " << toaster.height << " cm high." << std::endl;
+
     Example::main();
     std::cout << "good to go!" << std::endl;
 }
