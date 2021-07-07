@@ -92,6 +92,8 @@ struct HairdressingSalon
     int numUnitsHairColour = 35;
     int numCustomers = 5;
 
+    HairdressingSalon(); // The Constructor
+
     struct Hairdresser
     {
         int yearsExperience = 5;
@@ -100,6 +102,8 @@ struct HairdressingSalon
         float haircutRate = 65.0f;
         std::string name = "Tracey";
         int numberOfPersonalClients = 1;
+
+        Hairdresser(); // The Constructor
 
         int getNumberOfPersonalClients();
         void cutCustomerHair();
@@ -111,14 +115,25 @@ struct HairdressingSalon
     void washHair(Hairdresser hairdresser);
 };
 
+HairdressingSalon::HairdressingSalon()
+{
+    numHairdressers = 4;
+}
+
+HairdressingSalon::Hairdresser::Hairdresser()
+{
+    haircutRate = 65.f;
+}
+
 int HairdressingSalon::Hairdresser::getNumberOfPersonalClients()
 {
+    std::cout << "The number of personal clients is " << numberOfPersonalClients << std::endl;
     return numberOfPersonalClients;
 }
 
 void HairdressingSalon::Hairdresser::cutCustomerHair()
 {
-
+    std::cout << name << " is cutting hair." << std::endl;
 }
         
 void HairdressingSalon::Hairdresser::takeBreak()
@@ -129,6 +144,8 @@ void HairdressingSalon::Hairdresser::takeBreak()
 void HairdressingSalon::cutHair(Hairdresser hairdresser)
 {
     hairdresser.numberOfPersonalClients += 1;
+    std::cout << hairdresser.name << " has " << hairdresser.numberOfPersonalClients << " client" <<(hairdresser.numberOfPersonalClients == 1 ? "." : "s.") << std::endl;
+    
 }
     
 void HairdressingSalon::colourHair(Hairdresser hairdresser)
@@ -157,12 +174,19 @@ struct AudioCompLimiterEffect
     float gainChange = 0.f;
     float compRatio = 3.f;
 
+    AudioCompLimiterEffect(); // The Constructor
+
     void compressAudio(float compressionRatio, float compressionThreshold);
     void limitAudio();
     void changeGain(float newGain);
 
 
 };
+
+AudioCompLimiterEffect::AudioCompLimiterEffect()
+{
+    compThreshold = 0.f;
+}
 
 void AudioCompLimiterEffect::compressAudio(float compressionRatio, float compressionThreshold)
 {
@@ -172,11 +196,12 @@ void AudioCompLimiterEffect::compressAudio(float compressionRatio, float compres
 
 void AudioCompLimiterEffect::limitAudio()
 {
-
+    std::cout << "Limiting Audio" << std::endl;
 }
 
 void AudioCompLimiterEffect::changeGain(float newGain)
 {
+    std::cout << "The new gain is " << newGain << std::endl;
     gainChange = newGain;
 }
 
@@ -194,21 +219,28 @@ struct Gym
     float staffWages = 25000.f;
     float annualIncome = 35000.f;
 
+    Gym(); // The Constructor
+
     void payStaff(std::string staffName);
     void serviceMachines(int machineId);
     void invoiceCustomer(std::string customerName);
 
 };
 
+Gym::Gym() 
+{
+    annualFee = 350.f;
+}
+
 void Gym::payStaff(std::string staffName)
 {
     if (staffName == "Rachel")
     {
-
+        std::cout << "Rachel has been paid." << std::endl;
     }
     else
     {
-
+        std::cout << staffName << " has been paid." << std::endl;
     }
 }
     
@@ -253,15 +285,24 @@ struct Bicycle
         float pannierWidth = 30;
         float pannierLength = 45;
 
+        Pannier();
+
         void openPannier();
         void closePannier();
         void removePannier();
     };
 
+    Bicycle();
+
     void adjustTyrePressure(int newRearTyrePressure, int newFrontTyrePressure);
     bool adjustSaddleHeight(float newSaddleHeight);
     void turnFrontWheel(float amount);
 };
+
+Bicycle::Pannier::Pannier()
+{
+
+}
 
 void Bicycle::Pannier::openPannier()
 {
@@ -274,6 +315,11 @@ void Bicycle::Pannier::closePannier()
 }
         
 void Bicycle::Pannier::removePannier()
+{
+
+}
+
+Bicycle::Bicycle()
 {
 
 }
@@ -293,6 +339,8 @@ bool Bicycle::adjustSaddleHeight(float newSaddleHeight)
 void Bicycle::turnFrontWheel(float amount)
 {
     frontWheelAngle += amount;
+    std::cout << "Front wheel angle is " << frontWheelAngle << " degrees." << std::endl;
+
 }
 
 /*
@@ -306,15 +354,22 @@ struct Lights
     int TotalWattage = 300;
     int numberOfBulbs = 5;
     int wattageOfBulb = 60;
+
+    Lights();
  
     void lightCounter();
     void adjustCounterDimmerSetting(int newCounterDimmerSetting);
     void adjustMainDimmerSetting(int newMainDimmerSetting);
 };
 
+Lights::Lights()
+{
+    TotalWattage = 0;
+}
+
 void Lights::lightCounter()
 {
-
+    std::cout << "The counter is lit." << std::endl;
 }
     
 void Lights::adjustCounterDimmerSetting(int newCounterDimmerSetting)
@@ -339,10 +394,18 @@ struct Cooker
     float cookerHeight = 90.f;
     float cookerWidth = 60.f;
 
+    Cooker();
+
     void setOvenTemperature(int temperature);
     void setCookingTime(int time);
     void adjustShelfHeight(int height);
 };
+
+Cooker::Cooker()
+{
+    ovenTemperature = 200;
+    cookingTime = 0;
+}
 
 void Cooker::setOvenTemperature(int temperature)
 {
@@ -352,6 +415,7 @@ void Cooker::setOvenTemperature(int temperature)
 void Cooker::setCookingTime(int time)
 {
     cookingTime = time;
+    std::cout << "Cooking time is set at " << cookingTime << " mins." << std::endl;
 }
     
 void Cooker::adjustShelfHeight(int height)
@@ -372,10 +436,17 @@ struct Fridge
     float fridgeWidth = 60;
     int defrostTime = 60;
 
+    Fridge();
+
     void setFridgeTemperature(int temperature);
     void setFreezerTemperature(int temperature);
     void defrost(int time);
 };
+
+Fridge::Fridge()
+{
+    fridgeTemperature = 5;
+}
 
 void Fridge::setFridgeTemperature(int temperature)
 {
@@ -390,6 +461,7 @@ void Fridge::setFreezerTemperature(int temperature)
 void Fridge::defrost(int time)
 {
     defrostTime = time;
+    std::cout << "Fridge is defrosting" << std::endl;
 }
 
 /*
@@ -404,14 +476,23 @@ struct Sink
     int capacity = 24;
     int waterOutflowRate = 13;
 
+    Sink();
+
     void adjustWaterTemperature(int temperature);
     void setColdWaterFlow(int newFlow);
     void setHotWaterFlow(int newFlow);
 };
 
+Sink::Sink()
+{
+    coldWaterFlow = 0;
+    hotWaterFlow = 0;
+}
+
 void Sink::adjustWaterTemperature(int temperature)
 {
     waterTemperature = temperature;
+    std::cout << "Water temperature is now " << waterTemperature << " degrees." << std::endl;
 }
     
 void Sink::setColdWaterFlow(int newFlow)
@@ -436,10 +517,17 @@ struct Toaster
     float depth = 22.f;
     float maxWidth = 2.5;
 
+    Toaster();
+
     void setTimer(int time);
     void raiseToast();
     void lowerToast();
 };
+
+Toaster::Toaster()
+{
+
+}
 
 void Toaster::setTimer(int time)
 {
@@ -448,7 +536,7 @@ void Toaster::setTimer(int time)
     
 void Toaster::raiseToast()
 {
-
+    std::cout << "Toast raised!" << std::endl;
 }
     
 void Toaster::lowerToast()
@@ -471,10 +559,17 @@ struct Kitchen
     Sink kitchenSink;
     Toaster toaster;
 
+    Kitchen();
+
     void washDishes(Sink& sink);
     void cookFood(Cooker& cooker);
     void coolFood(Fridge& fridge);
 };
+
+Kitchen::Kitchen()
+{
+    
+}
 
 void Kitchen::washDishes(Sink& sink)
 {
@@ -484,6 +579,7 @@ void Kitchen::washDishes(Sink& sink)
 void Kitchen::cookFood(Cooker& cooker)
 {
     cooker.setOvenTemperature(180);
+    std::cout << "Food is cooking." << std::endl;
 }
     
 void Kitchen::coolFood(Fridge& fridge)
@@ -508,6 +604,57 @@ void Kitchen::coolFood(Fridge& fridge)
 #include <iostream>
 int main()
 {
+    // Hairdressing Salon
+    HairdressingSalon upperCutz;
+    HairdressingSalon::Hairdresser hairdresser;
+
+    upperCutz.cutHair(hairdresser);
+    hairdresser.cutCustomerHair();
+
+    // AudioCompLimiterEffect
+    AudioCompLimiterEffect effect;
+
+    effect.changeGain(0.75f);
+    effect.limitAudio();
+
+    // Gym
+    Gym gym;
+
+    gym.payStaff("Steve");
+
+    // Bicycle
+    Bicycle bike;
+    
+    bike.turnFrontWheel(-15.0f);
+
+    // Lights
+    Lights lights;
+    lights.lightCounter();
+
+    // Cooker
+    Cooker cooker;
+    cooker.setCookingTime(45);
+
+    // Fridge
+    Fridge fridge;
+    fridge.defrost(60);
+
+    // Sink
+    Sink sink;
+    sink.adjustWaterTemperature(28);
+
+    // Toaster
+    Toaster toaster;
+    toaster.raiseToast();
+
+    // Kitchen
+    Kitchen kitchen;
+    kitchen.cookFood(cooker);
+
+    std::cout << hairdresser.name << " has " << hairdresser.numberOfPersonalClients << " personal client" <<(hairdresser.numberOfPersonalClients == 1 ? "." : "s.") << std::endl;
+
+    std::cout << "The toaster's dimensions are " << toaster.width << " cm wide " << "by " << toaster.height << " cm high." << std::endl;
+
     Example::main();
     std::cout << "good to go!" << std::endl;
 }
