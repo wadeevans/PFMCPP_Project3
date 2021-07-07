@@ -127,12 +127,13 @@ HairdressingSalon::Hairdresser::Hairdresser()
 
 int HairdressingSalon::Hairdresser::getNumberOfPersonalClients()
 {
+    std::cout << "The number of personal clients is " << numberOfPersonalClients << std::endl;
     return numberOfPersonalClients;
 }
 
 void HairdressingSalon::Hairdresser::cutCustomerHair()
 {
-
+    std::cout << name << " is cutting hair." << std::endl;
 }
         
 void HairdressingSalon::Hairdresser::takeBreak()
@@ -143,6 +144,8 @@ void HairdressingSalon::Hairdresser::takeBreak()
 void HairdressingSalon::cutHair(Hairdresser hairdresser)
 {
     hairdresser.numberOfPersonalClients += 1;
+    std::cout << hairdresser.name << " has " << hairdresser.numberOfPersonalClients << " client" <<(hairdresser.numberOfPersonalClients == 1 ? "." : "s.") << std::endl;
+    
 }
     
 void HairdressingSalon::colourHair(Hairdresser hairdresser)
@@ -193,11 +196,12 @@ void AudioCompLimiterEffect::compressAudio(float compressionRatio, float compres
 
 void AudioCompLimiterEffect::limitAudio()
 {
-
+    std::cout << "Limiting Audio" << std::endl;
 }
 
 void AudioCompLimiterEffect::changeGain(float newGain)
 {
+    std::cout << "The new gain is " << newGain << std::endl;
     gainChange = newGain;
 }
 
@@ -232,11 +236,11 @@ void Gym::payStaff(std::string staffName)
 {
     if (staffName == "Rachel")
     {
-
+        std::cout << "Rachel has been paid." << std::endl;
     }
     else
     {
-
+        std::cout << staffName << " has been paid." << std::endl;
     }
 }
     
@@ -335,6 +339,8 @@ bool Bicycle::adjustSaddleHeight(float newSaddleHeight)
 void Bicycle::turnFrontWheel(float amount)
 {
     frontWheelAngle += amount;
+    std::cout << "Front wheel angle is " << frontWheelAngle << " degrees." << std::endl;
+
 }
 
 /*
@@ -363,7 +369,7 @@ Lights::Lights()
 
 void Lights::lightCounter()
 {
-
+    std::cout << "The counter is lit." << std::endl;
 }
     
 void Lights::adjustCounterDimmerSetting(int newCounterDimmerSetting)
@@ -409,6 +415,7 @@ void Cooker::setOvenTemperature(int temperature)
 void Cooker::setCookingTime(int time)
 {
     cookingTime = time;
+    std::cout << "Cooking time is set at " << cookingTime << " mins." << std::endl;
 }
     
 void Cooker::adjustShelfHeight(int height)
@@ -454,6 +461,7 @@ void Fridge::setFreezerTemperature(int temperature)
 void Fridge::defrost(int time)
 {
     defrostTime = time;
+    std::cout << "Fridge is defrosting" << std::endl;
 }
 
 /*
@@ -484,6 +492,7 @@ Sink::Sink()
 void Sink::adjustWaterTemperature(int temperature)
 {
     waterTemperature = temperature;
+    std::cout << "Water temperature is now " << waterTemperature << " degrees." << std::endl;
 }
     
 void Sink::setColdWaterFlow(int newFlow)
@@ -527,7 +536,7 @@ void Toaster::setTimer(int time)
     
 void Toaster::raiseToast()
 {
-
+    std::cout << "Toast raised!" << std::endl;
 }
     
 void Toaster::lowerToast()
@@ -570,6 +579,7 @@ void Kitchen::washDishes(Sink& sink)
 void Kitchen::cookFood(Cooker& cooker)
 {
     cooker.setOvenTemperature(180);
+    std::cout << "Food is cooking." << std::endl;
 }
     
 void Kitchen::coolFood(Fridge& fridge)
@@ -594,6 +604,53 @@ void Kitchen::coolFood(Fridge& fridge)
 #include <iostream>
 int main()
 {
+    // Hairdressing Salon
+    HairdressingSalon upperCutz;
+    HairdressingSalon::Hairdresser hairdresser;
+
+    upperCutz.cutHair(hairdresser);
+    hairdresser.cutCustomerHair();
+
+    // AudioCompLimiterEffect
+    AudioCompLimiterEffect effect;
+
+    effect.changeGain(0.75f);
+    effect.limitAudio();
+
+    // Gym
+    Gym gym;
+
+    gym.payStaff("Steve");
+
+    // Bicycle
+    Bicycle bike;
+    
+    bike.turnFrontWheel(-15.0f);
+
+    // Lights
+    Lights lights;
+    lights.lightCounter();
+
+    // Cooker
+    Cooker cooker;
+    cooker.setCookingTime(45);
+
+    // Fridge
+    Fridge fridge;
+    fridge.defrost(60);
+
+    // Sink
+    Sink sink;
+    sink.adjustWaterTemperature(28);
+
+    // Toaster
+    Toaster toaster;
+    toaster.raiseToast();
+
+    // Kitchen
+    Kitchen kitchen;
+    kitchen.cookFood(cooker);
+
     Example::main();
     std::cout << "good to go!" << std::endl;
 }
